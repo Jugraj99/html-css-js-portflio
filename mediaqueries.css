@@ -101,3 +101,54 @@
     text-align: justify;
   }
 }
+
+/* ============================ */
+/* MOBILE HAMBURGER MENU FIX */
+/* ============================ */
+@media screen and (max-width: 768px) {
+  #desktop-nav {
+    display: none;
+  }
+  #hamburger-nav {
+    display: flex;
+  }
+
+  /* Adjust the hamburger container */
+  .hamburger-icon {
+    width: 22px; /* smaller width for mobile */
+    height: 18px; /* smaller height for mobile */
+  }
+
+  /* Hamburger lines */
+  .hamburger-icon span {
+    height: 2px;
+    background-color: black;
+  }
+
+  /* X icon proportional transform */
+  .hamburger-icon.open span:first-child {
+    transform: rotate(45deg) translate(0.25em, 0.25em);
+  }
+
+  .hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-icon.open span:last-child {
+    transform: rotate(-45deg) translate(0.25em, -0.25em);
+  }
+
+  /* Menu links slide-in */
+  .menu-links {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  .menu-links.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
