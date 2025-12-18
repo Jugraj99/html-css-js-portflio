@@ -131,20 +131,6 @@ a:hover {
   pointer-events: auto;
 }
 
-/* HAMBURGER ICON ANIMATION */
-
-.hamburger-icon.open span:first-child {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger-icon.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger-icon.open span:last-child {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
 /* SECTIONS */
 
 section {
