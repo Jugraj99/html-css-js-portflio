@@ -430,5 +430,46 @@ footer p {
   text-align: center;
 }
 
+/* DARK MODE CLASS */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode nav,
+body.dark-mode footer,
+body.dark-mode .details-container,
+body.dark-mode .color-container,
+body.dark-mode .contact-info-upper-container {
+  background-color: #1e1e1e;
+  border-color: #444;
+}
+
+body.dark-mode a,
+body.dark-mode .nav-links li a,
+body.dark-mode .project-btn,
+body.dark-mode .btn-color-1,
+body.dark-mode .btn-color-2 {
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+body.dark-mode a:hover,
+body.dark-mode .btn-color-1:hover,
+body.dark-mode .btn-color-2:hover {
+  color: white;
+  background-color: #333;
+  border-color: #777;
+}
+
+body.dark-mode .hamburger-icon span {
+  background-color: #e0e0e0;
+}
+
+body.dark-mode .arrow,
+body.dark-mode .icon {
+  filter: brightness(0.8);
+}
+
 /*  MINS */
 /* 1:36:28 */
