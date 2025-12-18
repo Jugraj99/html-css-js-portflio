@@ -411,3 +411,27 @@ footer {
 footer p {
   text-align: center;
 }
+
+/* MOBILE HAMBURGER ICON ADJUSTMENTS */
+@media (max-width: 768px) {
+  .hamburger-icon {
+    width: 25px; /* smaller icon */
+    height: 20px; /* smaller height */
+  }
+
+  .hamburger-icon.open span:first-child {
+    transform: rotate(45deg) translate(4px, 4px);
+  }
+
+  .hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-icon.open span:last-child {
+    transform: rotate(-45deg) translate(4px, -4px);
+  }
+
+  .hamburger-icon span {
+    height: 2px;
+  }
+}
