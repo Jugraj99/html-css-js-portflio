@@ -101,27 +101,3 @@
     text-align: justify;
   }
 }
-
-/* HAMBURGER ICON - MOBILE FIX */
-@media screen and (max-width: 768px) {
-  .hamburger-icon {
-    width: 22px;
-    height: 18px;
-  }
-
-  .hamburger-icon.open span:first-child {
-    transform: rotate(45deg) translate(0.2em, 0.2em);
-  }
-
-  .hamburger-icon.open span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger-icon.open span:last-child {
-    transform: rotate(-45deg) translate(0.2em, -0.2em);
-  }
-
-  .hamburger-icon span {
-    height: 2px;
-  }
-}
