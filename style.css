@@ -411,32 +411,3 @@ footer {
 footer p {
   text-align: center;
 }
-
-/* ========================= */
-/* MOBILE HAMBURGER ICON ADJUSTMENTS */
-/* ========================= */
-
-@media (max-width: 768px) {
-  /* shrink the hamburger container */
-  .hamburger-icon {
-    width: 22px;
-    height: 18px;
-  }
-
-  /* smaller X translation for mobile */
-  .hamburger-icon.open span:first-child {
-    transform: rotate(45deg) translate(3px, 3px);
-  }
-
-  .hamburger-icon.open span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger-icon.open span:last-child {
-    transform: rotate(-45deg) translate(3px, -3px);
-  }
-
-  .hamburger-icon span {
-    height: 2px;
-  }
-}
