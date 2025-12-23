@@ -12,6 +12,16 @@
   }
 }
 
+/* Dark mode toggle position in mobile */
+@media screen and (max-width: 1200px) {
+  #dark-mode-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 100; /* stays above menu */
+  }
+}
+
 @media screen and (max-width: 1200px) {
   #desktop-nav {
     display: none;
