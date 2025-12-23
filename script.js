@@ -1,4 +1,4 @@
-// Hamburger menu
+// Hamburger menu toggle
 function toggleMenu() {
   const menu = document.querySelector(".menu-links");
   const icon = document.querySelector(".hamburger-icon");
@@ -7,29 +7,56 @@ function toggleMenu() {
 }
 
 // Dark mode toggle
-const darkModeToggle = document.getElementById("dark-mode-toggle");
+const darkModeToggleDesktop = document.getElementById("dark-mode-toggle");
+const darkModeToggleMobile = document.getElementById("dark-mode-toggle-mobile");
 
-// Load preference on page load
-if (localStorage.getItem("dark-mode") === "enabled") {
+// Function to apply dark mode based on current state
+function enableDarkMode() {
   document.body.classList.add("dark-mode");
-  darkModeToggle.textContent = "☀️";
+  if (darkModeToggleDesktop) darkModeToggleDesktop.textContent = "☀️";
+  if (darkModeToggleMobile) darkModeToggleMobile.textContent = "☀️";
+  localStorage.setItem("dark-mode", "enabled");
 }
 
-darkModeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-  if (document.body.classList.contains("dark-mode")) {
-    localStorage.setItem("dark-mode", "enabled");
-    darkModeToggle.textContent = "☀️";
-  } else {
-    localStorage.setItem("dark-mode", "disabled");
-    darkModeToggle.textContent = "🌙";
-  }
-});
+function disableDarkMode() {
+  document.body.classList.remove("dark-mode");
+  if (darkModeToggleDesktop) darkModeToggleDesktop.textContent = "🌙";
+  if (darkModeToggleMobile) darkModeToggleMobile.textContent = "🌙";
+  localStorage.setItem("dark-mode", "disabled");
+}
 
-// Get the button:
+// Load dark mode preference on page load
+if (localStorage.getItem("dark-mode") === "enabled") {
+  enableDarkMode();
+} else {
+  disableDarkMode();
+}
+
+// Event listeners for toggles
+if (darkModeToggleDesktop) {
+  darkModeToggleDesktop.addEventListener("click", () => {
+    if (document.body.classList.contains("dark-mode")) {
+      disableDarkMode();
+    } else {
+      enableDarkMode();
+    }
+  });
+}
+
+if (darkModeToggleMobile) {
+  darkModeToggleMobile.addEventListener("click", () => {
+    if (document.body.classList.contains("dark-mode")) {
+      disableDarkMode();
+    } else {
+      enableDarkMode();
+    }
+  });
+}
+
+// BACK TO TOP BUTTON
 let mybutton = document.getElementById("myBtn");
 
-// When the user scrolls down 20px from the top of the document, show the button
+// Show button on scroll
 window.onscroll = function () {
   scrollFunction();
 };
@@ -42,8 +69,8 @@ function scrollFunction() {
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
+// Scroll to top on button click
 function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  document.body.scrollTop = 0; // Safari
+  document.documentElement.scrollTop = 0; // Chrome, Firefox, IE, Opera
 }
