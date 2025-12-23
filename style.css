@@ -453,13 +453,14 @@ body.dark-mode .text-container p {
 /* Dark mode toggle button */
 .theme-toggle {
   position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
+  top: 2.2rem;
+  right: 0rem;
   z-index: 2000;
 }
 
 #dark-mode-toggle,
 #dark-mode-toggle-mobile {
+  top: 1rem;
   margin-left: 1rem;
   padding: 0.25rem 0.75rem;
   font-size: 1.25rem;
